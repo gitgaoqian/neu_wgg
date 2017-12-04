@@ -7,7 +7,7 @@ import sys
 import thread
 
 # Add custom service here
-services_list = ['vision', 'stereo_proc']
+services_list = ['monitor'，'addition','stereo_proc']
 app = flask.Flask(__name__)
 
 if "CLOUD_IP" not in os.environ:
@@ -18,8 +18,8 @@ cloud_ip = os.environ['CLOUD_IP']
 
 
 def service_start(srv):
-    if srv == 'vision':
-        os.system('roslaunch drv_brain drv_v2_workstation.launch')
+    if srv == 'monitor':
+        os.system('rosrun neu_wgg monitor.py')
     # Add custom service here
     elif srv == 'stereo_proc':
         os.system('roslaunch mycamera stereo_proc.launch')
