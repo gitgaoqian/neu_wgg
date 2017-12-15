@@ -5,9 +5,8 @@ import flask
 import os
 import sys
 import thread
-
 # Add custom service here
-services_list = ['monitor'，'addition','stereo_proc']
+services_list = ['monitor','addition','stereo_proc']
 app = flask.Flask(__name__)
 
 if "CLOUD_IP" not in os.environ:
@@ -15,43 +14,18 @@ if "CLOUD_IP" not in os.environ:
     sys.exit(1)
 
 cloud_ip = os.environ['CLOUD_IP']
+def monitor(number):
+     os.system('python monitor.py '+str(number))
 
-
-def service_start(srv):
-    if srv == 'monitor':
-        os.system('rosrun neu_wgg monitor.py')
-    # Add custom service here
-    elif srv == 'stereo_proc':
-        os.system('roslaunch mycamera stereo_proc.launch')
-    else:
-        return 'service not exist!'
-
-@app.route('/cloud_service/<service>/<action>', methods=['POST'])
-def cloud_service(service, action):
+@app.route('/cloud_service/monitor/<number>', methods=['POST'])
+def cloud_service(number):
     ros_master_ip = flask.request.remote_addr
     ros_master_uri = 'http://'+ros_master_ip+':11311'
     os.environ['ROS_MASTER_URI']=ros_master_uri
     os.environ['ROS_IP']=cloud_ip
-    if action == 'start':
-        thread.start_new_thread(service_start, (service,))
-        return "service " + service + " starting"
-    elif action == 'stop':
-        os.system('sh ~/cloud_test/stop.sh ' + service)
-        return "service " + service + " closing"
-    elif action == 'list':
-        return str(services_list)
-    elif action == 'start_all':
-        for service in services_list:
-            thread.start_new_thread(service_start, (service,))
-        return "All services started."
-    elif action == 'stop_all':
-        for service in services_list:
-            os.system('sh ~/cloud_test/stop.sh ' + service)
-        return "All services stopped."
-    else:
-        return 'Action unknown, acceptable actions are:' \
-               'start, stop, list, start_all, stop_all!'
-
-
+    thread.start_new_thread(monitor,(number,))
+   
+    return "cloud start monitor service for exo"+'-'+str(number)
+    
 if __name__ == '__main__':
-    app.run(cloud_ip, 5566)
+    app.run(cloud_ip, 5566,threaded=True)

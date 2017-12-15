@@ -11,6 +11,8 @@ find_package(catkin REQUIRED COMPONENTS
 add_message_files(
   FILES
   env.msg
+  angle.msg
+  env_and_angle.msg
 
 )
 
