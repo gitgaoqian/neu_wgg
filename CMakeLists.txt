@@ -20,6 +20,7 @@ add_message_files(
 add_service_files(
    FILES
 call.srv
+call3.srv
 #   Service2.srv
 )
 

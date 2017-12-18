@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="neu_wgg" type="env_publisher.py" name="env_publisher" output="screen">
+  </node>
+
+  <node pkg="neu_wgg" type="angle_publisher.py" name="angle_publisher" output="screen">
+  </node>
+
+  <node pkg="neu_wgg" type="data_publisher.py" name="data_publisher" output="screen">
+  </node>
+
+</launch>
