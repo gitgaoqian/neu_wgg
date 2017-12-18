@@ -14,9 +14,9 @@ if "CLOUD_IP" not in os.environ:
 
 cloud_ip = os.environ['CLOUD_IP']
 def data_storage(exo_number):
-     os.system('python data_interface.py '+str(exo_number))
+     os.system('rosrun neu_wgg data_interface.py '+str(exo_number))
 def data_fetch(exo_number):
-     os.system('python monitor_interface.py '+str(exo_number))
+     os.system('rosrun neu_wgg monitor_interface.py '+str(exo_number))
 
 @app.route('/cloud_service/<action>/<exo_number>', methods=['POST'])
 def storage_and_fetch(action,exo_number):

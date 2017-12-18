@@ -1,17 +1,11 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
-# Form implementation generated from reading ui file 'waiguge.ui'
-#
-# Created: Mon Nov 27 17:20:54 2017
-#      by: PyQt4 UI code generator 4.10.4
-#
-# WARNING! All changes made in this file will be lost!
-
 from PyQt4 import QtCore, QtGui
 import rospy
 import os
 import thread
 from neu_wgg.msg import env_and_angle
+import sys
 #环境信息
 atmo=0
 temp=0
@@ -81,9 +75,9 @@ class Ui_Form(object):
         self.Button_righth1 = QtGui.QPushButton(self.tab1)
         self.Button_righth1.setGeometry(QtCore.QRect(390, 120, 100, 30))
         self.Button_righth1.setObjectName(_fromUtf8("Button_righth1"))
-#        self.Button_display1 = QtGui.QPushButton(self.tab1)
-#        self.Button_display1.setGeometry(QtCore.QRect(50, 190, 80, 23))
-#        self.Button_display1.setObjectName(_fromUtf8("Button_display1"))
+#       self.Button_display1 = QtGui.QPushButton(self.tab1)
+#       self.Button_display1.setGeometry(QtCore.QRect(50, 190, 80, 23))
+#       self.Button_display1.setObjectName(_fromUtf8("Button_display1"))
         self.tabWidget.addTab(self.tab1, _fromUtf8(""))
         self.header = QtGui.QLabel(Form)
         self.header.setGeometry(QtCore.QRect(230, 20, 151, 20))
@@ -157,10 +151,8 @@ class mywindow(QtGui.QWidget,Ui_Form):
         thread.start_new_thread(self.fun_righth1,())
 
 if __name__=="__main__":  
-    import sys  
-    global exo_id
-    exo_id = str(sys.argv[1])
     rospy.init_node('cloud_monitor',anonymous = True)
+    exo_id = str(sys.argv[1])
     app=QtGui.QApplication(sys.argv)  
     myshow=mywindow()  
     myshow.show()  
