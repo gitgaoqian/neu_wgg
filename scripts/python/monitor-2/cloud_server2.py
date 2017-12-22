@@ -16,7 +16,7 @@ if "CLOUD_IP" not in os.environ:
 
 cloud_ip = os.environ['CLOUD_IP']
 def monitor(number):
-     os.system('python monitor.py '+str(number))
+     os.system('python monitor2.py '+str(number))
 
 @app.route('/cloud_service/monitor/<number>', methods=['POST'])
 def cloud_service(number):

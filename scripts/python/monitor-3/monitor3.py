@@ -106,7 +106,7 @@ class mywindow(QtGui.QWidget,Ui_Form):
         super(mywindow,self).__init__()    
         self.setupUi(self)  #(self)这里理解为传入的参数是类mywindow的实例   
         #订阅关节角度信息
-        rospy.Subscriber('env_angle',env_and_angle,self.callback1)
+        rospy.Subscriber('env_and_angle',env_and_angle,self.callback1)
        
         #槽函数链接
         self.Button_leftk1.clicked.connect(self.plot_leftk1)
@@ -134,19 +134,19 @@ class mywindow(QtGui.QWidget,Ui_Form):
          self.lineEdit_temp1.setText(str(temp))
          self.lineEdit_hum1.setText(str(hum))
     def fun_leftk1(self):
-        os.system('rosrun rqt_plot rqt_plot leftk')  
+        os.system('rosrun rqt_plot rqt_plot /angle_topic/leftk')  
     def plot_leftk1(self):
         thread.start_new_thread(self.fun_leftk1,())
     def fun_lefth1(self):
-        os.system('rosrun rqt_plot rqt_plot lefth')  
+        os.system('rosrun rqt_plot rqt_plot /angle_topic/lefth')  
     def plot_lefth1(self):
         thread.start_new_thread(self.fun_lefth1,())
     def fun_rightk1(self):
-        os.system('rosrun rqt_plot rqt_plot rightk')  
+        os.system('rosrun rqt_plot rqt_plot /angle_topic/rightk')  
     def plot_rightk1(self):
         thread.start_new_thread(self.fun_rightk1,())
     def fun_righth1(self):
-        os.system('rosrun rqt_plot rqt_plot rightk')  
+        os.system('rosrun rqt_plot rqt_plot /angle_topic/rightk')  
     def plot_righth1(self):
         thread.start_new_thread(self.fun_righth1,())
 
