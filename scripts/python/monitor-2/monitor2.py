@@ -22,6 +22,7 @@ global lefth
 global rightk
 global righth
 global exo_id
+import sys  
 import MySQLdb as mdb
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -160,8 +161,6 @@ class mywindow(QtGui.QWidget,Ui_Form):
         thread.start_new_thread(self.fun_righth1,())
 
 if __name__=="__main__":  
-    import sys  
-    global exo_id
     exo_id = str(sys.argv[1])
     rospy.init_node('cloud_monitor',anonymous = True)    
     app=QtGui.QApplication(sys.argv)  

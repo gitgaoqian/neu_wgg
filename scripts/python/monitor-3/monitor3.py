@@ -106,7 +106,7 @@ class mywindow(QtGui.QWidget,Ui_Form):
         super(mywindow,self).__init__()    
         self.setupUi(self)  #(self)这里理解为传入的参数是类mywindow的实例   
         #订阅关节角度信息
-        rospy.Subscriber('env_and_angle',env_and_angle,self.callback1)
+        rospy.Subscriber('env_angle',env_and_angle,self.callback1)
        
         #槽函数链接
         self.Button_leftk1.clicked.connect(self.plot_leftk1)
