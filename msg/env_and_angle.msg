@@ -5,3 +5,5 @@ float64 righth
 float64 temp  
 float64 hum  
 float64 atmo
+float64 longitude
+float64 latitude 

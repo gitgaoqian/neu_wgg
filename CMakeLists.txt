@@ -12,7 +12,9 @@ add_message_files(
   FILES
   env.msg
   angle.msg
+  location.msg
   env_and_angle.msg
+
 
 )
 

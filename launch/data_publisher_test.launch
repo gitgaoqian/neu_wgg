@@ -1,0 +1,16 @@
+<launch>
+ <!--env publisher-->
+  <node pkg="neu_wgg" type="env_publisher.py" name="env_publisher" output="screen">
+  </node>
+<!--angle publisher-->
+  <node pkg="neu_wgg" type="angle_publisher.py" name="angle_publisher" output="screen">
+  </node>
+<!--location publisher-->
+  <node pkg="neu_wgg" type="location_publisher.py" name="location_publisher" output="screen">
+  </node>
+<!--env_and_angle publisher-->
+  <node pkg="neu_wgg" type="data_publisher.py" name="data_publisher" output="screen">
+  
+  </node>
+
+</launch>

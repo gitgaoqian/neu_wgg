@@ -23,6 +23,8 @@ def talker():
         lefth=result[0]["lefth"]
         rightk=result[0]["rightk"]
         righth=result[0]["righth"]
+        longitude=result[0]["longitude"]
+        latitude=result[0]["latitude"]
         msg= env_and_angle()
         msg.atmo = atmo
         msg.temp = temp
@@ -31,6 +33,8 @@ def talker():
         msg.lefth=lefth
         msg.rightk=rightk
         msg.righth=righth
+        msg.longitude=longitude
+        msg.latitude=latitude
         data_pub.publish(msg)
         rate.sleep()       
 if __name__ == '__main__':
