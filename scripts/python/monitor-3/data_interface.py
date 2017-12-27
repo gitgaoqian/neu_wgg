@@ -28,7 +28,6 @@ class Data_Interface:
         self.conn_exolog=mdb.connect(host="127.0.0.1",user="root",db="exo_"+exo_id,passwd="ubuntu",charset="utf8")
         self.cur_exolog=self.conn_exolog.cursor()
         time.sleep(2)
-        #使用线程进行历史数据存储,这样设置可以使两个存储的频率不同
         thread.start_new_thread(self.exo_log,())
     def callback(self,data):
         self.atmo = data.atmo
@@ -56,13 +55,13 @@ class Data_Interface:
 #将关节角度和环境数据的历史数据存放到先对应的数据库    
     def exo_log(self):
         while 1:
-#            time_stamp = time.asctime( time.localtime(time.time()) )
-#            time_tuple=(time_stamp,)
-            global num
-            num=num+1
-            num_tuple=(num,)
+            time_stamp = time.asctime( time.localtime(time.time()) )
+            time_tuple=(time_stamp,)
+#            global num
+#            num=num+1
+#            num_tuple=(num,)
             data=(self.leftk,self.lefth,self.rightk,self.righth,self.temp,self.hum,self.atmo,self.longitude,self.latitude)
-            log_data=num_tuple+data
+            log_data=time_tuple+data
             self.cur_exolog.execute("insert into exo_"+exo_id+" values (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",log_data)
             time.sleep(2)
             self.conn_exolog.commit()
