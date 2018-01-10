@@ -27,7 +27,6 @@ righth=0
 longitude=0
 latitude=0
 global exo_id
-
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
 except AttributeError:
