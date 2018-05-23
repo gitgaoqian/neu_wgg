@@ -2,18 +2,20 @@
 # -*- coding: utf-8 -*-
 import MySQLdb as mdb
 import rospy
+import sys
 from neu_wgg.msg import env_and_angle
 #将关节角度和环境数据存放到数据库
-def talker():  
-    import sys  
-    exo_id = str(sys.argv[1])
-    data_pub=rospy.Publisher('env_angle',env_and_angle,queue_size=10) 
-    rospy.init_node('data_publisher',anonymous = True)
-    rate = rospy.Rate(5) # 10hz
+def Monitor():
+    exo_id = sys.argv[1]
+    node_name = "Fetch_" + exo_id
+    topic_name = "fetch_topic_"+exo_id
+    data_pub=rospy.Publisher(topic_name,env_and_angle,queue_size=10)
+    rospy.init_node(node_name,anonymous = True)
+    rate = rospy.Rate(5) # 5hz
     while not rospy.is_shutdown():
-        conn=mdb.connect(host="127.0.0.1",user="root",db="exo1213",passwd="ubuntu",charset="utf8")
+        conn=mdb.connect(host="127.0.0.1",user="root",db="NeuExo",passwd="8182",charset="utf8")
         cur=conn.cursor(cursorclass=mdb.cursors.DictCursor)
-        cur.execute("select * from exo_table where id="+exo_id)
+        cur.execute("select * from exo_sum where id="+exo_id)
         result=cur.fetchall()
         cur.scroll(0,"absolute")
         atmo=result[0]["atmo"]
@@ -36,9 +38,9 @@ def talker():
         msg.longitude=longitude
         msg.latitude=latitude
         data_pub.publish(msg)
-        rate.sleep()       
+        rate.sleep()
 if __name__ == '__main__':
     try:
-        talker()
+        Monitor()
     except rospy.ROSInterruptException:
-        pass   
+        pass

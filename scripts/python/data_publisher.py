@@ -21,7 +21,7 @@ longitude=0
 latitude=0
 class data_publisher:
      def __init__(self):
-         self.pub = rospy.Publisher('env_and_angle', env_and_angle, queue_size=10)
+         self.pub = rospy.Publisher('store_topic', env_and_angle, queue_size=10)
          rospy.Subscriber('env_topic',env,self.env_callback)
          rospy.Subscriber('angle_topic',angle,self.angle_callback) 
          rospy.Subscriber('location_topic',location,self.location_callback)  

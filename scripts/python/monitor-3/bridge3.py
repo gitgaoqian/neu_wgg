@@ -10,12 +10,12 @@ if "CLOUD_IP" not in os.environ:
     sys.exit(1)
 
 cloud_ip = os.environ['CLOUD_IP']
-cloud_service_port = 'http://'+ cloud_ip + ':5566'
+cloud_service_port = 'http://'+ cloud_ip + ':7788'
 
 def handle(data):
+    exo_id= data.number
     action=data.action    
-    exo_number = data.number    
-    url = cloud_service_port + '/cloud_service/'+action+'/'+exo_number
+    url = cloud_service_port + '/cloud_service/'+exo_id+'/'+action
     return bridge_client.cloud_service_request(url)
 
 def bridge_server():

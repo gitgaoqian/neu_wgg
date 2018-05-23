@@ -153,8 +153,10 @@ class mywindow(QtGui.QWidget,Ui_Form):
     def __init__(self):    
         super(mywindow,self).__init__()    
         self.setupUi(self)  #(self)这里理解为传入的参数是类mywindow的实例   
+        global exo_id
+        topic_name = "fetch_topic_"+exo_id
         #订阅关节角度信息
-        rospy.Subscriber('env_angle',env_and_angle,self.callback)
+        rospy.Subscriber(topic_name,env_and_angle,self.callback)
        
         #槽函数链接
         self.Button_leftk.clicked.connect(self.plot_leftk)
@@ -208,19 +210,19 @@ class mywindow(QtGui.QWidget,Ui_Form):
         global longitude
         global latitude
         url="http://api.map.baidu.com/staticimage/v2?ak=deORyDWtAUIuqAOYN7O6f7ikELN2tsD9&center="+str(longitude)+","+str(latitude)+"&zoom=18&markers="+str(longitude)+","+str(latitude)
-        urllib.urlretrieve(url,"/home/ros/test/mymap.png")        
-        image = QtGui.QImage("/home/ros/test/mymap.png")          
+        urllib.urlretrieve(url,"/home/ubuntu/NeuExoMap/mymap.png")        
+        image = QtGui.QImage("/home/ros/NeuExoMap/mymap.png")          
         self.label_map.setPixmap(QtGui.QPixmap.fromImage(image))         
         self.label_map.adjustSize() 
 
 if __name__=="__main__":  
-    rospy.init_node('monitor',anonymous = True)
-    exo_id = str(sys.argv[1])
-    app=QtGui.QApplication(sys.argv)  
-    myshow=mywindow()  
-    myshow.show()  
-    sys.exit(app.exec_()) 
-    
+	exo_id = str(sys.argv[1])
+	node_name = "Monitor_"+exo_id
+	rospy.init_node(node_name,anonymous = True)
+	app=QtGui.QApplication(sys.argv)  
+	myshow=mywindow()  
+	myshow.show()  
+	sys.exit(app.exec_())
  
 
 

@@ -14,6 +14,8 @@ add_message_files(
   angle.msg
   location.msg
   env_and_angle.msg
+  sensor.msg
+  inertia.msg
 
 
 )
