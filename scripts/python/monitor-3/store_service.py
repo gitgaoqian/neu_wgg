@@ -27,7 +27,7 @@ class Storage:
     def __init__(self):
         topic_name = "store_topic_"+exo_id
         rospy.Subscriber(topic_name,env_and_angle,self.callback)
-        self.conn_exo=mdb.connect(host="127.0.0.1",user="root",db="NeuExo",passwd="8182",charset="utf8")
+        self.conn_exo=mdb.connect(host="127.0.0.1",user="root",db="NeuExo",passwd="ubuntu",charset="utf8")
         self.conn_exo.ping(True)
         self.cur_exo=self.conn_exo.cursor()
         self.data = (0,0,0,0,0,0,0,0,0)

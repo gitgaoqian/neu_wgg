@@ -13,7 +13,7 @@ def Monitor():
     rospy.init_node(node_name,anonymous = True)
     rate = rospy.Rate(5) # 5hz
     while not rospy.is_shutdown():
-        conn=mdb.connect(host="127.0.0.1",user="root",db="NeuExo",passwd="8182",charset="utf8")
+        conn=mdb.connect(host="127.0.0.1",user="root",db="NeuExo",passwd="ubuntu",charset="utf8")
         cur=conn.cursor(cursorclass=mdb.cursors.DictCursor)
         cur.execute("select * from exo_sum where id="+exo_id)
         result=cur.fetchall()

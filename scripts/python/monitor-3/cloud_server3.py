@@ -16,7 +16,7 @@ if "CLOUD_IP" not in os.environ:
     "Can't find environment variable CLOUD_IP."
     sys.exit(1)
 cloud_ip = os.environ['CLOUD_IP']
-port = 7788
+port = 5566
 class NeuExo():
     def __init__(self):
         self.conn = mdb.connect(host="127.0.0.1", user="root", db="NeuExo", passwd="ubuntu", charset="utf8")
@@ -24,7 +24,7 @@ class NeuExo():
         # threaded = True:开启app路由多线程并发,可以同时处理多个http请求，即路由函数可以同时执行
         # threaded = False:开启app路由单线程，一次只能处理一个http请求
         #路由uri
-        @app.route('/cloud_service/<robotID>/<action>',methods=['POST'])
+        @app.route('/storage/<robotID>/<action>',methods=['POST'])
         def ServiceHandler(robotID,action):
             token = flask.request.remote_addr
             is_auth = self.IsAuth(token)  # 首先进行身份验证
@@ -104,7 +104,7 @@ class NeuExo():
     def StoreData(self, robotID):
         os.system('rosrun neu_wgg store_service.py '+robotID+" __name:=StoreService"+robotID)
     def FetchData(self, robotID):
-        os.system('rosrun neu_wgg monitor_interface.py ' + robotID+" __name:=FetchService"+robotID)
+        os.system('rosrun neu_wgg fetch_service.py ' + robotID+" __name:=FetchService"+robotID)
 if __name__ == '__main__':
     NeuExo()
 

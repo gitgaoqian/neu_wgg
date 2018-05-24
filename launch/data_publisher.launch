@@ -2,14 +2,9 @@
  <!--env publisher-->
    <node pkg="rosserial_python"
         type="serial_node.py" name="serial_node" >
-    <param name="port" value="/dev/ttyACM0" />
+    <param name="port" value="/dev/ttyACM1" />
     <param name="buad" value="9600" />
   </node>
-<!--angle publisher-->
-  <node pkg="neu_wgg" type="angle_publisher.py" name="angle_publisher" output="screen">
-  </node>
-<!--env_and_angle publisher-->
-  <node pkg="neu_wgg" type="data_publisher.py" name="data_publisher" output="screen">
-  </node>
+
 
 </launch>
