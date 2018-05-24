@@ -25,6 +25,6 @@ store，云端会开启数据服务节点将信息存入数据库中．第三方
 云端会开启监控服务节点，读取数据库中相应外骨骼的信息，并且向外发布．用户开启监控面板．
 
 2018-5-24：更改存储服务的URI形式
-@app.route('/cloud_service/<robotID>/<action>',methods=['POST'])
+@app.route('/cloud_service/(robotID)/(action)',methods=['POST'])
 改为：
-@app.route('/storage/<robotID>/<action>',methods=['POST'])
+@app.route('/storage/(robotID)/(action)',methods=['POST'])
