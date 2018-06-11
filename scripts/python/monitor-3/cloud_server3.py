@@ -102,9 +102,9 @@ class NeuExo():
         os.environ['ROS_MASTER_URI'] = ros_master_uri
         os.environ['ROS_IP'] = cloud_ip
     def StoreData(self, robotID):
-        os.system('rosrun neu_wgg store_service.py '+robotID+" __name:=StoreService"+robotID)
+        os.system('rosrun neu_wgg store_service.py '+robotID+" __name:=StoreService_"+robotID)
     def FetchData(self, robotID):
-        os.system('rosrun neu_wgg fetch_service.py ' + robotID+" __name:=FetchService"+robotID)
+        os.system('rosrun neu_wgg fetch_service.py ' + robotID+" __name:=FetchService_"+robotID)
 if __name__ == '__main__':
     NeuExo()
 

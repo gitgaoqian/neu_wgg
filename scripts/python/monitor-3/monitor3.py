@@ -99,6 +99,9 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
+        self.ButtonExit = QtGui.QPushButton(Form)
+        self.ButtonExit.setGeometry(QtCore.QRect(470, 630, 71, 31))
+        self.ButtonExit.setObjectName(_fromUtf8("ButtonExit"))
         self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
         self.label_long = QtGui.QLabel(self.tab1)
@@ -132,6 +135,7 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
+        QtCore.QObject.connect(self.ButtonExit, QtCore.SIGNAL(_fromUtf8("clicked()")), Form.close)
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Form", None))
         self.label_env.setText(_translate("Form", "环境信息", None))
@@ -147,6 +151,7 @@ class Ui_Form(object):
         self.label_long.setText(_translate("Form", "经度", None))
         self.label_lat.setText(_translate("Form", "纬度", None))
         self.Button_map.setText(_translate("Form", "地图显示", None))
+        self.ButtonExit.setText(_translate("Form", "退出", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab1), _translate("Form", "外骨骼"+str(exo_id), None))
         self.header.setText(_translate("Form", "外骨骼监控面板", None))
 class mywindow(QtGui.QWidget,Ui_Form):    

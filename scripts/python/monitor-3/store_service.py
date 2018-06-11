@@ -51,7 +51,7 @@ class Storage:
                     "latitude=%s where id="+exo_id, (self.leftk,self.lefth,self.rightk,self.righth,self.temp,self.hum,
                                             self.atmo,self.longitude,self.latitude))
         self.conn_exo.commit()
-#将关节角度和环境数据的历史数据存放到先对应的数据库
+#将关节角度和环境数据的历史数据存放到相对应的数据库
     def LogExoID(self):
         # while 1:
             # time_stamp = time.asctime( time.localtime(time.time()) )

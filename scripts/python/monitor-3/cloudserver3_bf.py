@@ -19,7 +19,6 @@ cloud_ip = os.environ['CLOUD_IP']
 def Storage(exo_number):
     os.system('rosrun neu_wgg storage_interface.py ' + str(exo_number))
 
-
 def Fetch(exo_number):
     os.system('rosrun neu_wgg monitor_interface.py ' + str(exo_number))
 
