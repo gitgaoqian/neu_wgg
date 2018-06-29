@@ -13,7 +13,11 @@ import os
 import thread
 from neu_wgg.msg import env_and_angle
 import sys
+pre_path = "/home/ros/pycharm/MyFiles/NEU_GDMAP/"
+sys.path.append(pre_path+'neu_program')#把其他文件夹的py路径添加过来
 import urllib
+import cv2
+import sign
 #环境信息
 atmo=0
 temp=0
@@ -44,9 +48,9 @@ except AttributeError:
 class Ui_Form(object):
     def setupUi(self, Form):
         Form.setObjectName(_fromUtf8("Form"))
-        Form.resize(561, 690)
+        Form.resize(561, 790)
         self.tabWidget = QtGui.QTabWidget(Form)
-        self.tabWidget.setGeometry(QtCore.QRect(20, 40, 521, 621))
+        self.tabWidget.setGeometry(QtCore.QRect(20, 40, 521, 721))
         self.tabWidget.setObjectName(_fromUtf8("tabWidget"))
         self.tab1 = QtGui.QWidget()
         self.tab1.setObjectName(_fromUtf8("tab1"))
@@ -99,9 +103,6 @@ class Ui_Form(object):
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
-        self.ButtonExit = QtGui.QPushButton(Form)
-        self.ButtonExit.setGeometry(QtCore.QRect(470, 630, 71, 31))
-        self.ButtonExit.setObjectName(_fromUtf8("ButtonExit"))
         self.label.setFont(font)
         self.label.setObjectName(_fromUtf8("label"))
         self.label_long = QtGui.QLabel(self.tab1)
@@ -135,7 +136,6 @@ class Ui_Form(object):
         self.retranslateUi(Form)
         self.tabWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
-        QtCore.QObject.connect(self.ButtonExit, QtCore.SIGNAL(_fromUtf8("clicked()")), Form.close)
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Form", None))
         self.label_env.setText(_translate("Form", "环境信息", None))
@@ -151,7 +151,6 @@ class Ui_Form(object):
         self.label_long.setText(_translate("Form", "经度", None))
         self.label_lat.setText(_translate("Form", "纬度", None))
         self.Button_map.setText(_translate("Form", "地图显示", None))
-        self.ButtonExit.setText(_translate("Form", "退出", None))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab1), _translate("Form", "外骨骼"+str(exo_id), None))
         self.header.setText(_translate("Form", "外骨骼监控面板", None))
 class mywindow(QtGui.QWidget,Ui_Form):    
@@ -214,8 +213,20 @@ class mywindow(QtGui.QWidget,Ui_Form):
     def map_display(self):
         global longitude
         global latitude
-        url="http://api.map.baidu.com/staticimage/v2?ak=deORyDWtAUIuqAOYN7O6f7ikELN2tsD9&center="+str(longitude)+","+str(latitude)+"&zoom=18&markers="+str(longitude)+","+str(latitude)
-        urllib.urlretrieve(url,"/home/ubuntu/NeuExoMap/mymap.png")        
+        #在线模式
+        # url="http://api.map.baidu.com/staticimage/v2?ak=deORyDWtAUIuqAOYN7O6f7ikELN2tsD9&center="+str(longitude)+","+str(latitude)+"&zoom=18&markers="+str(longitude)+","+str(latitude)
+        # urllib.urlretrieve(url,"/home/ubuntu/NeuExoMap/mymap.png")
+        #离线模式
+        gd_lng = longitude
+        gd_lat = latitude
+        (tileX, tileY) = sign.GeographyToTile(gd_lng, gd_lat)  # 获取瓦片坐标
+        (pixelX_init, pixelY_init) = sign.GeographyToPixel(gd_lng, gd_lat)  # 获取像素坐标
+        (numX, numY, tileX_init, tileY_init) = sign.TileJudge(tileX, tileY)  # 判断瓦片落在哪一个部分,返回这个部分的左上角的瓦片坐标
+        (pixelX, pixelY) = (pixelX_init + (int(tileX) - tileX_init) * 256, pixelY_init + (int(tileY) - tileY_init) * 256)  # 计算在该部分瓦片的像素坐标
+        img = cv2.imread(pre_path+"/neu_tiles/" + str(numX) + "_" + str(numY) + "/tile_png/L18/neu.png")
+        cv2.circle(img, (int(round(pixelX)), int(round(pixelY))), 10, (0, 0, 255), -1)
+        img = cv2.resize(img,(400,400),interpolation=cv2.INTER_LINEAR)
+        cv2.imwrite("/home/ros/NeuExoMap/mymap.png", img)
         image = QtGui.QImage("/home/ros/NeuExoMap/mymap.png")          
         self.label_map.setPixmap(QtGui.QPixmap.fromImage(image))         
         self.label_map.adjustSize() 
