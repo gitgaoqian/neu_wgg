@@ -30,4 +30,5 @@ store，云端会开启数据服务节点将信息存入数据库中．第三方
 @app.route('/storage/(robotID)/(action)',methods=['POST'])
 
 2018-6-29:
-monitor3的地图显示增加离线模式
+monitor3的地图显示增加离线模式,
+存储服务的管理制作了服务管理界面,ExoManager.py,演示可参考视频:外骨骼611.mkv

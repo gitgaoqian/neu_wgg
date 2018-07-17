@@ -7,6 +7,7 @@
 #      by: PyQt4 UI code generator 4.10.4
 #
 # WARNING! All changes made in this file will be lost!
+#增加关节期望角度.2018-7-15
 from PyQt4 import QtCore, QtGui
 import rospy
 import os
@@ -23,6 +24,10 @@ atmo=0
 temp=0
 hum=0
 #关节角度信息
+elefk=0
+elefh=0
+erightk=0
+erighth=0
 leftk=0
 lefth=0
 rightk=0
@@ -121,7 +126,7 @@ class Ui_Form(object):
         self.Button_map.setGeometry(QtCore.QRect(350, 228, 71, 31))
         self.Button_map.setObjectName(_fromUtf8("Button_map"))
         self.label_map = QtGui.QLabel(self.tab1)
-        self.label_map.setGeometry(QtCore.QRect(60, 280, 400, 300))
+        self.label_map.setGeometry(QtCore.QRect(60, 280, 400, 400))
         self.label_map.setText(_fromUtf8(""))
         self.label_map.setObjectName(_fromUtf8("label_map"))
         self.tabWidget.addTab(self.tab1, _fromUtf8(""))
@@ -186,7 +191,7 @@ class mywindow(QtGui.QWidget,Ui_Form):
          leftk=data.leftk
          lefth=data.lefth
          rightk=data.rightk
-         righth=data.righth   
+         righth=data.righth
          longitude=data.longitude
          latitude=data.latitude
          self.lineEdit_atmo.setText(str(atmo))

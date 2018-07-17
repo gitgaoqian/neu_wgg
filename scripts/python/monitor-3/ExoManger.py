@@ -244,7 +244,7 @@ class Ui_Form(object):
         self.LabelCloudServer.setText(_translate("Form", "云服务器", None))
         self.LabelRequestConfig.setText(_translate("Form", "请求配置", None))
         self.LabelPreConfig.setText(_translate("Form", "通信配置", None))
-        self.ButtonBridge.setText(_translate("Form", "桥梁节点", None))
+        self.ButtonBridge.setText(_translate("Form", "通信节点", None))
         self.ButtonExit.setText(_translate("Form", "退出", None))
         self.ButtonCollect.setText(_translate("Form", "采集节点", None))
         self.ButtonMonitor.setText(_translate("Form", "监控节点", None))

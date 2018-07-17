@@ -9,7 +9,7 @@
 <!--location publisher-->
   <node pkg="neu_wgg" type="location_publisher.py" name="location_publisher" output="screen">
   </node>
-<!--env_and_angle publisher-->
+<!--total data publisher-->
   <node pkg="neu_wgg" type="data_publisher.py" name="Exo_$(arg exo_id)" output="screen">
   <remap from="store_topic" to="store_topic_$(arg exo_id)"/>
   </node>

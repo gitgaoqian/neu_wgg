@@ -16,6 +16,7 @@ add_message_files(
   env_and_angle.msg
   sensor.msg
   inertia.msg
+  joint.msg
 
 
 )
@@ -43,6 +44,9 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+#add_executable(joint_publisher scripts/cpp/angle_publisher.cpp)
+#target_link_libraries(joint_publisher ${catkin_LIBRARIES})
+#add_dependencies(joint_publisher neu_wgg_generate_messages_cpp)
 
 
 

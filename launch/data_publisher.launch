@@ -1,10 +1,17 @@
 <launch>
- <!--env publisher-->
+  <arg name="exo_id" default="1"/>
+ <!--Arduino sensor publisher-->
    <node pkg="rosserial_python"
-        type="serial_node.py" name="serial_node" >
+        type="serial_node.py" name="serial_node" output="screen" >
     <param name="port" value="/dev/ttyACM1" />
     <param name="buad" value="9600" />
   </node>
+<!-- joint angle from sunyao-->
+  <node pkg="neu_wgg" type="joint" name="joint_publisher" output="screen">
+  </node>
 
-
+<!--total publisher-->
+ <node pkg="neu_wgg" type="total_publisher.py" name="Exo_$(arg exo_id)" output="screen">
+  <remap from="store_topic" to="store_topic_$(arg exo_id)"/>
+  </node>
 </launch>
