@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from neu_wgg.msg import location
-locat={"longitude":(123.419205),"latitude":(41.764613)}
+locat={"longitude":(123.4264419999999944),"latitude":(41.7721390000000028)}
 def talker():
     location_pub = rospy.Publisher('location_topic', location, queue_size=10)
     rospy.init_node('location_pub', anonymous=True)

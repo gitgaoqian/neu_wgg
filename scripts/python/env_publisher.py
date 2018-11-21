@@ -5,14 +5,14 @@ def talker():
     env_pub = rospy.Publisher('env_topic', env, queue_size=10)
     rospy.init_node('env_pub', anonymous=True)
     rate = rospy.Rate(5) # 10hz
-    atmo=0
-    temp=0
-    hum=0
+    atmo=1.0
+    temp=15
+    hum=60
     
     while not rospy.is_shutdown():
-     atmo=atmo+0.1
-     temp=temp+0.2
-     hum=hum+0.3
+     atmo=atmo
+     temp=temp
+     hum=hum
      env_msg= env()
      env_msg.atmo = atmo
      env_msg.temp = temp

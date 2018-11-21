@@ -6,7 +6,7 @@
     <param name="port" value="/dev/ttyACM1" />
     <param name="buad" value="9600" />
   </node>
-<!-- joint angle from sunyao-->
+<!-- joint angle from sun-->
   <node pkg="neu_wgg" type="joint" name="joint_publisher" output="screen">
   </node>
 

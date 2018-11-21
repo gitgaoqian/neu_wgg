@@ -11,6 +11,6 @@
   </node>
 <!--total data publisher-->
   <node pkg="neu_wgg" type="data_publisher.py" name="Exo_$(arg exo_id)" output="screen">
-  <remap from="store_topic" to="store_topic_$(arg exo_id)"/>
+  <remap from="store_topic" to="env_angle"/>
   </node>
 </launch>

@@ -6,9 +6,9 @@ then
 {
 	rosnode kill /StoreService_$1
 	rosnode kill /Exo_$1
-	rosnode kill /angle_publisher
-	rosnode kill /env_publisher
-	rosnode kill /location_publisher
+	rosnode kill /angle_publisher_$1
+	rosnode kill /env_publisher_$1
+	rosnode kill /location_publisher_$1
 }
 elif [ $2 = 'fetch' ]
 then

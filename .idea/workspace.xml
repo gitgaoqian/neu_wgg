@@ -6,13 +6,44 @@
   <component name="ChangeListManager">
     <list default="true" id="08a91d89-de17-4dc1-b9c4-3f24dd7019fd" name="Default" comment="Update on 5-23">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
       <change beforePath="$PROJECT_DIR$/launch/data_publisher.launch" afterPath="$PROJECT_DIR$/launch/data_publisher.launch" />
-      <change beforePath="$PROJECT_DIR$/launch/data_publisher_test.launch" afterPath="$PROJECT_DIR$/launch/data_publisher_test.launch" />
-      <change beforePath="$PROJECT_DIR$/readme.md" afterPath="$PROJECT_DIR$/readme.md" />
-      <change beforePath="$PROJECT_DIR$/scripts/python/monitor-3/ExoManger.py" afterPath="$PROJECT_DIR$/scripts/python/monitor-3/ExoManger.py" />
+      <change beforePath="$PROJECT_DIR$/scripts/python/angle_publisher.py" afterPath="$PROJECT_DIR$/scripts/python/angle_publisher.py" />
       <change beforePath="$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py" afterPath="$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py" />
-      <change beforePath="$PROJECT_DIR$/scripts/python/test510.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/bin/python2.7" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/include/python2.7" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/UserDict.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/_abcoll.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/_weakrefset.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/abc.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/codecs.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/copy_reg.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/distutils/__init__.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/distutils/distutils.cfg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/encodings" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/fnmatch.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/genericpath.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/lib-dynload" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/linecache.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/locale.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/no-global-site-packages.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/ntpath.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/orig-prefix.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/os.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/posixpath.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/re.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/site.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/sre.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/sre_compile.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/sre_constants.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/sre_parse.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/stat.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/types.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/lib/python2.7/warnings.py" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/local/bin" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/local/include" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/venv/local/lib" afterPath="" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,21 +57,43 @@
       <file leaf-file-name="monitor3.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+            <state relative-caret-position="1431">
+              <caret line="160" column="38" lean-forward="false" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
               <folding>
                 <element signature="e#270#301#0" expanded="true" />
                 <element signature="e#1130#7041#0" expanded="false" />
-                <element signature="e#10531#10729#0" expanded="false" />
+                <element signature="e#7089#10551#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="total_publisher.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="cloud_server3.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/cloud_server3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-27">
+              <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="angle_publisher.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/python/angle_publisher.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="594">
+              <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+              <folding>
+                <element signature="e#71#83#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="total_publisher.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/total_publisher.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
+            <state relative-caret-position="189">
               <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
               <folding>
                 <element signature="e#47#59#0" expanded="true" />
@@ -121,16 +174,17 @@
         <option value="$PROJECT_DIR$/scripts/python/readme.md" />
         <option value="$PROJECT_DIR$/readme.md" />
         <option value="$PROJECT_DIR$/scripts/python/monitor-3/cloudserver3_bf.py" />
-        <option value="$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py" />
         <option value="$PROJECT_DIR$/scripts/python/monitor-3/total_publisher.py" />
+        <option value="$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py" />
+        <option value="$PROJECT_DIR$/scripts/python/angle_publisher.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-27" />
-    <option name="y" value="270" />
-    <option name="width" value="1681" />
-    <option name="height" value="940" />
+    <option name="x" value="54" />
+    <option name="y" value="-8" />
+    <option name="width" value="1874" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -150,7 +204,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -159,15 +212,34 @@
               <item name="neu_wgg" type="b2602c69:ProjectViewProjectNode" />
               <item name="neu_wgg" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="neu_wgg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neu_wgg" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neu_wgg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neu_wgg" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="neu_wgg" type="b2602c69:ProjectViewProjectNode" />
+              <item name="neu_wgg" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="python" type="462c0819:PsiDirectoryNode" />
+              <item name="monitor-3" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
-    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/MyFiles/CloudVerify" />
+    <property name="last_opened_file_path" value="$APPLICATION_HOME_DIR$/MyFiles/CloudVerify/qos" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -181,7 +253,25 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.client3">
+  <component name="RunManager" selected="Python.angle_publisher">
+    <configuration name="angle_publisher" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/scripts/python" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="neu_wgg" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/scripts/python/angle_publisher.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="client3" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -218,14 +308,16 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Python.test510" />
       <item index="1" class="java.lang.String" itemvalue="Python.client3" />
+      <item index="2" class="java.lang.String" itemvalue="Python.angle_publisher" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Python.client3" />
-        <item index="1" class="java.lang.String" itemvalue="Python.test510" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Python.angle_publisher" />
+        <item index="1" class="java.lang.String" itemvalue="Python.client3" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test510" />
       </list>
     </recent_temporary>
   </component>
@@ -309,13 +401,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/python/data_publisher.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="23" column="48" lean-forward="false" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/data_interface.py" />
     <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/monitor_interface.py" />
     <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py">
@@ -449,13 +534,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/monitor_interface.py" />
-    <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/cloud_server3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/python/readme.md" />
     <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/readme.md" />
     <entry file="file://$PROJECT_DIR$/readme.md">
@@ -526,24 +604,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py">
+    <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/total_publisher.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="17" column="55" lean-forward="false" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="189">
+          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
           <folding>
-            <element signature="e#270#301#0" expanded="true" />
-            <element signature="e#1130#7041#0" expanded="false" />
-            <element signature="e#10531#10729#0" expanded="false" />
+            <element signature="e#47#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/total_publisher.py">
+    <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/monitor3.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state relative-caret-position="1431">
+          <caret line="160" column="38" lean-forward="false" selection-start-line="160" selection-start-column="38" selection-end-line="160" selection-end-column="38" />
           <folding>
-            <element signature="e#47#59#0" expanded="true" />
+            <element signature="e#270#301#0" expanded="true" />
+            <element signature="e#1130#7041#0" expanded="false" />
+            <element signature="e#7089#10551#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/python/monitor-3/cloud_server3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-27">
+          <caret line="10" column="25" lean-forward="true" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/python/angle_publisher.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="22" column="7" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+          <folding>
+            <element signature="e#71#83#0" expanded="true" />
           </folding>
         </state>
       </provider>

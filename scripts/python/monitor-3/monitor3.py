@@ -144,15 +144,15 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         Form.setWindowTitle(_translate("Form", "Form", None))
         self.label_env.setText(_translate("Form", "环境信息", None))
-        self.label_atmo.setText(_translate("Form", "温度", None))
-        self.label_temp.setText(_translate("Form", "湿度", None))
-        self.label_hum.setText(_translate("Form", "气压", None))
+        self.label_atmo.setText(_translate("Form", "气压", None))
+        self.label_temp.setText(_translate("Form", "温度", None))
+        self.label_hum.setText(_translate("Form", "湿度", None))
         self.label_drv.setText(_translate("Form", "运动信息", None))
         self.Button_leftk.setText(_translate("Form", "左膝关节角度", None))
         self.Button_lefth.setText(_translate("Form", "左髋关节角度", None))
         self.Button_rightk.setText(_translate("Form", "右膝关节角度", None))
         self.Button_righth.setText(_translate("Form", "右髋关节角度", None))
-        self.label.setText(_translate("Form", "地理位置信息", None))
+        self.label.setText(_translate("Form", "地理信息", None))
         self.label_long.setText(_translate("Form", "经度", None))
         self.label_lat.setText(_translate("Form", "纬度", None))
         self.Button_map.setText(_translate("Form", "地图显示", None))
@@ -164,6 +164,7 @@ class mywindow(QtGui.QWidget,Ui_Form):
         self.setupUi(self)  #(self)这里理解为传入的参数是类mywindow的实例   
         global exo_id
         topic_name = "fetch_topic_"+exo_id
+        rospy.init_node(node_name, anonymous=True)
         #订阅关节角度信息
         rospy.Subscriber(topic_name,env_and_angle,self.callback)
        
@@ -239,7 +240,7 @@ class mywindow(QtGui.QWidget,Ui_Form):
 if __name__=="__main__":  
 	exo_id = str(sys.argv[1])
 	node_name = "Monitor_"+exo_id
-	rospy.init_node(node_name,anonymous = True)
+
 	app=QtGui.QApplication(sys.argv)  
 	myshow=mywindow()  
 	myshow.show()  
