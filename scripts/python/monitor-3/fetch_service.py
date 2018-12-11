@@ -11,7 +11,7 @@ def Monitor():
     topic_name = "fetch_topic_"+exo_id
     data_pub=rospy.Publisher(topic_name,env_and_angle,queue_size=10)
     rospy.init_node(node_name,anonymous = True)
-    rate = rospy.Rate(5) # 5hz
+    rate = rospy.Rate(5) # 10hz
     while not rospy.is_shutdown():
         conn=mdb.connect(host="127.0.0.1",user="root",db="NeuExo",passwd="ubuntu",charset="utf8")
         cur=conn.cursor(cursorclass=mdb.cursors.DictCursor)

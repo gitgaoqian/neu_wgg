@@ -201,19 +201,19 @@ class mywindow(QtGui.QWidget,Ui_Form):
          self.lineEdit_long.setText(str(longitude))
          self.lineEdit_lat.setText(str(latitude))
     def fun_leftk(self):
-        os.system('rosrun rqt_plot rqt_plot /angle_topic/leftk')  
+        os.system('rqt_plot /fetch_topic_'+exo_id+'/leftk')
     def plot_leftk(self):
         thread.start_new_thread(self.fun_leftk,())
     def fun_lefth(self):
-        os.system('rosrun rqt_plot rqt_plot /angle_topic/lefth')  
+        os.system('rqt_plot /fetch_topic_' + exo_id + '/lefth')
     def plot_lefth(self):
         thread.start_new_thread(self.fun_lefth,())
     def fun_rightk(self):
-        os.system('rosrun rqt_plot rqt_plot /angle_topic/rightk')  
+        os.system('rqt_plot /fetch_topic_' + exo_id + '/rightk')
     def plot_rightk(self):
         thread.start_new_thread(self.fun_rightk,())
     def fun_righth(self):
-        os.system('rosrun rqt_plot rqt_plot /angle_topic/rightk')  
+        os.system('rqt_plot /fetch_topic_' + exo_id + '/righth')
     def plot_righth(self):
         thread.start_new_thread(self.fun_righth,())
     def map_display(self):

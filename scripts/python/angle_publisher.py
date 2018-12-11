@@ -24,7 +24,7 @@ def talker():
     load_data('/home/ros/catkin_ws/src/neu_wgg/scripts/python/data_wgg.txt')
     angle_pub = rospy.Publisher('angle_topic', angle, queue_size=10)
     rospy.init_node('angle_publisher', anonymous=True)
-    rate = rospy.Rate(10) # 10hz
+    rate = rospy.Rate(5) # 10hz
     while not rospy.is_shutdown():
         angle_msg=angle()
         # data=math.sin(i)

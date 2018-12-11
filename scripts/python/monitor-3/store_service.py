@@ -44,7 +44,7 @@ class Storage:
         self.latitude=data.latitude
         self.data=(self.leftk,self.lefth,self.rightk,self.righth,self.temp,self.hum,self.atmo,self.longitude,self.latitude)
         self.UpdateExoSum()
-        self.LogExoID()
+        # self.LogExoID()
 #将关节角度和环境数据以及地理位置信息存放到数据库
     def UpdateExoSum(self):
         self.cur_exo.execute("update exo_sum set leftk=%s,lefth=%s,rightk=%s,righth=%s,temp=%s,hum=%s,atmo=%s,longitude=%s,"

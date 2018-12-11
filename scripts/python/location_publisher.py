@@ -5,7 +5,7 @@ locat={"longitude":(123.4264419999999944),"latitude":(41.7721390000000028)}
 def talker():
     location_pub = rospy.Publisher('location_topic', location, queue_size=10)
     rospy.init_node('location_pub', anonymous=True)
-    rate = rospy.Rate(5) # 10hz
+    rate = rospy.Rate(10) # 10hz
     longitude=0
     latitude=0
     i=0
